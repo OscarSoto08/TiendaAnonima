@@ -1,15 +1,92 @@
-<?php 
+<?php
 require ("logica/Producto.php");
-
-$producto = new Producto();
-$productos = $producto -> consultarTodos();
-
-foreach ($productos as $productoActual){
-    echo $productoActual -> getIdProducto() . ", ";
-    echo $productoActual -> getNombre() . ", ";
-    echo $productoActual -> getCantidad() . ", ";
-    echo $productoActual -> getPrecioVenta() . ", ";
-    echo "<br>";
-}
-
 ?>
+<html>
+<head>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col text-center mt-2">
+				<img src="img/logo.png" height="150" />
+			</div>
+		</div>
+	</div>
+
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container">
+			<a class="navbar-brand" href="#"><img src="img/logo2.png" width="50" /></a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+				aria-controls="navbarNavDropdown" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
+						href="#" role="button" data-bs-toggle="dropdown"
+						aria-expanded="false">Marca</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#">Marca 1</a></li>
+							<li><a class="dropdown-item" href="#">Marca 2</a></li>
+						</ul></li>
+				</ul>
+				<ul class="navbar-nav">
+					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
+						href="#" role="button" data-bs-toggle="dropdown"
+						aria-expanded="false">Categoria</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#">Categoria 1</a></li>
+							<li><a class="dropdown-item" href="#">Categoria 2</a></li>
+						</ul></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row mb-3">
+			<div class="col">
+				<div class="card border-primary">
+					<div class="card-header text-bg-info">Tienda Anonima</div>
+					<div class="card-body">
+    					<?php
+    					$i=0;
+                        $producto = new Producto();
+                        $productos = $producto->consultarTodos();
+                        foreach ($productos as $productoActual) {
+                            if($i%4 == 0){
+                                echo "<div class='row mb-3'>";
+                            }
+                            echo "<div class='col-lg-3 col-md-4 col-sm-6' >";
+                            echo "<div class='card text-bg-light'>";
+                            echo "<div class='card-body'>";
+                            echo "<div class='text-center'><img src='https://icons.iconarchive.com/icons/custom-icon-design/mono-general-1/256/faq-icon.png' width='70%' /></div>";
+                            echo "<a href='#'>" . $productoActual->getNombre() . "</a><br>";
+                            echo "Cantidad: " . $productoActual->getCantidad() . "<br>";
+                            echo "Valor: $" . $productoActual->getPrecioVenta();
+                            echo "</div>";
+                            echo "</div>";
+                            echo "</div>";
+                            
+                            if($i%4 == 3){
+                                echo "</div>";
+                            }
+                            $i++;
+                        }
+                        if($i%4 != 0){
+                            echo "</div>";
+                        }
+                        ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
