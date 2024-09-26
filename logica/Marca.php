@@ -41,6 +41,14 @@ class Marca{
         return $marcas;        
     }
     
+    public function consultar(){
+        $conexion = new Conexion();
+        $conexion -> abrirConexion();
+        $marcaDAO = new MarcaDAO($this -> idMarca);
+        $conexion -> ejecutarConsulta($marcaDAO -> consultar());
+        $registro = $conexion -> siguienteRegistro();
+        $this -> nombre = $registro[0];
+    }    
 }
 
 ?>
