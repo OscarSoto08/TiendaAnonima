@@ -1,29 +1,32 @@
 <?php
-require "./persistencia/Conexion.php";
-require "./persistencia/CategoriaDAO.php";
+require_once ("./persistencia/Conexion.php");
+require ("./persistencia/CategoriaDAO.php");
+
 class Categoria{
-    private $id;
+    private $idCategoria;
     private $nombre;
-    public function __construct($id = 0, $nombre = ""){
-        $this->id = $id;
-        $this->nombre = $nombre;
+
+    public function getIdCategoria() {
+        return $this->idCategoria;
     }
 
-    public function getId(){
-        return $this->id;
-    }
-
-    public function getNombre(){
+    public function getNombre() {
         return $this->nombre;
     }
 
-    public function setId($id){
-        $this->id = $id;
+    public function setIdProducto($idCategoria){
+        $this->idCategoria = $idCategoria;
     }
+
     public function setNombre($nombre){
         $this->nombre = $nombre;
     }
 
+    public function __construct($idCategoria=0, $nombre=""){
+        $this -> idCategoria = $idCategoria;
+        $this -> nombre = $nombre;
+    }
+    
     public function consultarTodos(){
         $categorias = array();
         $conexion = new Conexion();
@@ -35,9 +38,20 @@ class Categoria{
             array_push($categorias, $categoria);
         }
         $conexion -> cerrarConexion();
-        unset($conexion);
         return $categorias;        
     }
 
+
+    public function consultar(){
+        $conexion = new Conexion();
+        $conexion -> abrirConexion();
+       
+        $categoriaDAO = new CategoriaDAO($this->idCategoria);
+        $conexion -> ejecutarConsulta($categoriaDAO -> consultar());
+        $resultado = $conexion -> siguienteRegistro();
+        $this -> nombre = $resultado[0];
+    }
+    
 }
+
 ?>
