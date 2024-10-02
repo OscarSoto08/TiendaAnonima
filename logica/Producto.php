@@ -58,8 +58,6 @@ class Producto{
         $this->precioVenta = $precioVenta;
     }
     
-    
-
     public function __construct($idProducto=0, $nombre="", $cantidad=0, $precioCompra=0, $precioVenta=0, $marca=null){
         $this -> idProducto = $idProducto;
         $this -> nombre = $nombre;

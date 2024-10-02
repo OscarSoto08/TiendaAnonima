@@ -48,6 +48,7 @@ class Marca{
         $conexion -> ejecutarConsulta($marcaDAO -> consultar());
         $registro = $conexion -> siguienteRegistro();
         $this -> nombre = $registro[0];
+        $conexion -> cerrarConexion();
     }    
 }
 
