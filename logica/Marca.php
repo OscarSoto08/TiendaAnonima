@@ -14,7 +14,7 @@ class Marca{
         return $this->nombre;
     }
 
-    public function setIdProducto($idMarca){
+    public function setIdMarca($idMarca){
         $this->idMarca = $idMarca;
     }
 

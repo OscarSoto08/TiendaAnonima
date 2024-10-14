@@ -3,6 +3,9 @@ session_start();
 if(isset($_GET["cerrarSesion"])){
     session_destroy();
 }
+if(isset($_POST["id"])){
+	header("Location: sesionAdministrador.php");
+}
 require ("logica/Producto.php");
 require ("logica/Categoria.php");
 require ("logica/Marca.php");
