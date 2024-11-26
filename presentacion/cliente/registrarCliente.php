@@ -1,9 +1,8 @@
 <?php
 $error = false;
-if (isset($_POST["registrar"])) {
-        
+if (isset($_POST["registrar"])) {        
     $cliente = new Cliente(null, $_POST["nombre"], $_POST["apellido"], $_POST["correo"], md5($_POST["clave"]));
-    $cliente -> insertar();
+    $cliente -> registrar();
 }
 include ("presentacion/encabezado.php")?>
 <div class="container">
@@ -15,6 +14,9 @@ include ("presentacion/encabezado.php")?>
 					<h4>Registrar Cliente</h4>
 				</div>
 				<div class="card-body">
+				<?php if (isset($_POST["registrar"])) { ?>
+					<div class="alert alert-success mt-3" role="alert">Cliente registrado</div>		
+				<?php } ?>
 					<form method="post"
 						action="?pid=<?php echo base64_encode("presentacion/cliente/registrarCliente.php")?>">
 						<div class="mb-3">

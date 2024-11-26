@@ -19,7 +19,11 @@ class ProductoDAO{
                 from Producto";
     }
     
-    
+    public function buscar($filtro){
+        return "select idProducto, nombre, cantidad, precioCompra, precioVenta, Marca_idMarca
+                from Producto
+                where nombre like '%" . $filtro . "%'";
+    }
 }
 
 ?>

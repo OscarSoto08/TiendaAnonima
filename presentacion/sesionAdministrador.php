@@ -1,5 +1,9 @@
 <?php
 $id = $_SESSION["id"];
+$rol = $_SESSION["rol"];
+if($rol != "A"){
+    header("Location: ?pid=" . base64_encode("presentacion/sinPermiso.php"));    
+}
 $administrador = new Administrador($id);
 $administrador -> consultar();
 include ("presentacion/encabezado.php");

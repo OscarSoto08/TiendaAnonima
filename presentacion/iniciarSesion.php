@@ -3,10 +3,18 @@ $error = false;
 if (isset($_POST["autenticar"])) {
     $administrador = new Administrador(null, null, null, $_POST["correo"], md5($_POST["clave"]));
     if ($administrador->autenticar()) {
-        $_SESSION["id"] = $administrador->getIdPersona();
+        $_SESSION["id"] = $administrador -> getIdPersona();
+        $_SESSION["rol"] = "A";
         header("Location: ?pid=" . base64_encode("presentacion/sesionAdministrador.php"));
     } else {
-        $error = true;
+        $cliente = new Cliente(null, null, null, $_POST["correo"], md5($_POST["clave"]));
+        if($cliente -> autenticar()){
+            $_SESSION["id"] = $cliente -> getIdPersona();
+            $_SESSION["rol"] = "C";
+            header("Location: ?pid=" . base64_encode("presentacion/sesionCliente.php"));
+        }else{
+            $error = true;
+        }
     }
 }
 include ("presentacion/encabezado.php")?>

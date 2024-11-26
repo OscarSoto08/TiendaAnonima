@@ -13,14 +13,14 @@
 					href="#" role="button" data-bs-toggle="dropdown"
 					aria-expanded="false">Producto</a>
 					<ul class="dropdown-menu">
-                        <li><a class='dropdown-item' href='#'>Nuevo Producto</a></li>
-                        <li><a class='dropdown-item' href='?pid=<?php echo base64_encode("presentacion/producto/buscarProducto.php")?>'>Buscar Producto</a></li>
+                        <li><a class='dropdown-item' href='#'>Consultar Producto</a></li>
 					</ul></li>
 			</ul>
+			
 			<ul class="navbar-nav">
 				<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
 					href="#" role="button" data-bs-toggle="dropdown"
-					aria-expanded="false"><?php echo $administrador -> getNombre() . " " . $administrador -> getApellido() ?></a>
+					aria-expanded="false"><?php echo $cliente -> getNombre() . " " . $cliente -> getApellido() ?></a>
 					<ul class="dropdown-menu">
                         <li><a class='dropdown-item' href='?cerrarSesion=true'>Cerrar Sesion</a></li>
 					</ul></li>
