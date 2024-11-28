@@ -3,6 +3,9 @@ session_start();
 if(isset($_GET["cerrarSesion"])){
     session_destroy();
 }
+if(isset($_POST["id"])){
+	header("Location: sesionAdministrador.php");
+}
 require ("logica/Producto.php");
 require ("logica/Categoria.php");
 require ("logica/Marca.php");
@@ -21,7 +24,8 @@ $paginasConSesion = [
     "presentacion/sesionCliente.php",
     "presentacion/producto/buscarProducto.php",
     'presentacion/cliente/buscarCliente.php',
-    'presentacion/cliente/consultarCliente.php'
+    'presentacion/cliente/consultarCliente.php',
+    'presentacion/producto/formularioProducto.php'
 ];
 
 ?>

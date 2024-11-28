@@ -13,7 +13,7 @@
 					href="#" role="button" data-bs-toggle="dropdown"
 					aria-expanded="false">Producto</a>
 					<ul class="dropdown-menu">
-                        <li><a class='dropdown-item' href='#'>Nuevo Producto</a></li>
+                        <li><a class='dropdown-item' href='?pid="<?php echo base64_encode('presentacion/producto/formularioProducto.php')?>"'>Nuevo Producto</a></li>
                         <li><a class='dropdown-item' href='?pid=<?php echo base64_encode("presentacion/producto/buscarProducto.php")?>'>Buscar Producto</a></li>
 					</ul>
 				</li>

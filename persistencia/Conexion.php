@@ -4,6 +4,9 @@ class Conexion{
     private $mysqlConexion;
     private $resultado;
     
+    public function getResultado(){
+        return $this->resultado;
+    }
     public function abrirConexion(){
         $this -> mysqlConexion = new mysqli("localhost", "root", "123456", "tiendaanonima");
     }

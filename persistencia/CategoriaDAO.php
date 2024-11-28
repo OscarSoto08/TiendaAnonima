@@ -13,6 +13,13 @@ class CategoriaDAO{
                 from Categoria
                 order by nombre asc";
     }
+
+    public function consultar(){
+        return 
+        "SELECT nombre
+        FROM Categoria
+        WHERE idCategoria = '". $this -> idCategoria ."'";
+    }
 }
 
 ?>
