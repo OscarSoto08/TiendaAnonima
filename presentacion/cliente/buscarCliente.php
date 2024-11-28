@@ -6,15 +6,15 @@ if($rol != "A"){
 }
 $administrador = new Administrador($id);
 $administrador -> consultar();
-include ("presentacion/encabezado.php");
-include ("presentacion/menuAdministrador.php");
+include "presentacion/encabezado.php";
+include "presentacion/menuAdministrador.php";
 ?>
 <div class="container">
 	<div class="row mb-3">
 		<div class="col">
 			<div class="card border-primary">
 				<div class="card-header text-bg-info">
-					<h4>Buscar Producto</h4>
+					<h4>Buscar Cliente</h4>
 				</div>
 				<div class="card-body">
 					<div class="row">
@@ -38,7 +38,7 @@ include ("presentacion/menuAdministrador.php");
 <script>
 $(document).ready(function(){
   $("#filtro").keyup(function(){
-	filtro = $("#filtro").val();
+    filtro = $("#filtro").val();
     if (filtro.length < 3) {
 		$("#resultado").html(
 			"<div class='alert alert-warning mt-3' role='alert'>Ingresa al menos 3 caracteres</div>"
@@ -46,8 +46,7 @@ $(document).ready(function(){
 	}else{
 	// Codifica el filtro para que sea seguro en la URL
 	filtro = encodeURIComponent(filtro);
-	console.log(filtro)
-       url = "indexAjax.php?pid=<?php echo base64_encode("presentacion/producto/buscarProductoAjax.php") . "&filtro=" ?>" + filtro;
+       url = "indexAjax.php?pid=<?php echo base64_encode("presentacion/cliente/buscarClienteAjax.php") . "&filtro=" ?>" + filtro;
        $("#resultado").load(url);
 	}
   });

@@ -10,17 +10,19 @@ require ("logica/Persona.php");
 require ("logica/Administrador.php");
 require ("logica/Cliente.php");
 
-$paginasSinSesion = array(
+$paginasSinSesion = [
     "presentacion/iniciarSesion.php",
     "presentacion/cliente/registrarCliente.php",
     "presentacion/sinPermiso.php",
-);
+];
 
-$paginasConSesion = array(
+$paginasConSesion = [
     "presentacion/sesionAdministrador.php",
     "presentacion/sesionCliente.php",
-    "presentacion/producto/buscarProducto.php"
-);
+    "presentacion/producto/buscarProducto.php",
+    'presentacion/cliente/buscarCliente.php',
+    'presentacion/cliente/consultarCliente.php'
+];
 
 ?>
 <html>
@@ -51,5 +53,6 @@ if(!isset($_GET["pid"])){
 }
 
 ?>
+<script src="https://kit.fontawesome.com/14596e32cc.js" crossorigin="anonymous"></script>
 </body>
 </html>

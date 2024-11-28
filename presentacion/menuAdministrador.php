@@ -15,7 +15,16 @@
 					<ul class="dropdown-menu">
                         <li><a class='dropdown-item' href='#'>Nuevo Producto</a></li>
                         <li><a class='dropdown-item' href='?pid=<?php echo base64_encode("presentacion/producto/buscarProducto.php")?>'>Buscar Producto</a></li>
-					</ul></li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
+					href="#" role="button" data-bs-toggle="dropdown"
+					aria-expanded="false">Clientes</a>
+					<ul class="dropdown-menu">
+                        <li><a class='dropdown-item' href='?pid=<?php echo base64_encode('presentacion/cliente/buscarCliente.php')?>'>Buscar Clientes</a></li>
+                        <li><a class='dropdown-item' href='?pid=<?php echo base64_encode('presentacion/cliente/consultarCliente.php')?>'>Consultar Clientes</a></li>
+					</ul>
+				</li>
 			</ul>
 			<ul class="navbar-nav">
 				<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"

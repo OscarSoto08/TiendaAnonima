@@ -6,8 +6,8 @@ if($rol != "A"){
 }
 $administrador = new Administrador($id);
 $administrador -> consultar();
-include ("presentacion/encabezado.php");
-include ("presentacion/menuAdministrador.php");
+include "presentacion/encabezado.php";
+include "presentacion/menuAdministrador.php";
 ?>
 <div class="container">
 	<div class="row mb-3">
