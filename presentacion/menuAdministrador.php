@@ -1,6 +1,11 @@
+<?php 
+$administrador = new Administrador($_SESSION["id"]);
+$administrador -> consultar();
+?>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
 	<div class="container">
-		<a class="navbar-brand" href="#"><img src="img/logo2.png" width="50" /></a>
+		<a class="navbar-brand" href="?pid=<?php echo base64_encode("presentacion/sesionAdministrador.php")?>"><img src="img/logo2.png" width="50" /></a>
 		<button class="navbar-toggler" type="button"
 			data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
 			aria-controls="navbarNavDropdown" aria-expanded="false"

@@ -4,10 +4,10 @@ $rol = $_SESSION["rol"];
 if($rol != "A"){
     header("Location: ?pid=" . base64_encode("presentacion/sinPermiso.php"));    
 }
-$administrador = new Administrador($id);
-$administrador -> consultar();
 include ("presentacion/encabezado.php");
 include ("presentacion/menuAdministrador.php");
+$administrador = new Administrador($id);
+$administrador -> consultar();
 ?>
 <div class="container">
 	<div class="row mb-3">
