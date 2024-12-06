@@ -17,7 +17,7 @@
             echo "<div class='col-lg-3 col-md-4 col-sm-6' >";
             echo "<div class='card text-bg-light'>";
             echo "<div class='card-body'>";
-            echo "<div class='text-center'><img src='https://icons.iconarchive.com/icons/custom-icon-design/mono-general-1/256/faq-icon.png' width='70%' /></div>";
+            echo "<div class='text-center'><img src='" . (($productoActual -> getImagen() != "")?$productoActual -> getImagen():"https://icons.iconarchive.com/icons/custom-icon-design/mono-general-1/256/faq-icon.png") ."' width='70%' /></div>";
             echo "<a href='#'>" . $productoActual->getNombre() . "</a><br>";
             echo "Cantidad: " . $productoActual->getCantidad() . "<br>";
             echo "Valor: $" . $productoActual->getPrecioVenta() . "<br>";
