@@ -20,7 +20,6 @@ $productos = $objProducto -> consultarTodos();
 
 foreach($productos as $productoAct){
     $pdf -> Cell(15, 10, $productoAct -> getIdProducto(), 1, 0, "C");
-
     $longitudNombre = strlen($productoAct -> getNombre());
     $pdf -> Cell(90, 10, substr($productoAct -> getNombre(), 0, 40) . (($longitudNombre > 40) ? " ..." : ""), 1, 0, "C");
     $pdf -> Cell(25, 10, $productoAct -> getCantidad(), 1, 0, "C");

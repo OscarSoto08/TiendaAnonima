@@ -37,7 +37,7 @@ $check = '<i class="fa-regular fa-circle-check"></i>';
 				</div>
 				<div class="card-body">
 					<div class="row">
-                        <h1>Aqui se hará la paginación</h1>
+                        <!-- <h1>Aqui se hará la paginación</h1> -->
                         <table class="table table-striped table-hover">
                         <thead>
                             <tr>
