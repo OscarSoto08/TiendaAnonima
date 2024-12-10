@@ -46,7 +46,7 @@ class ClienteDAO{
     }
 
     public function cambiarEstado(){
-        return "UPDATE cliente SET estado = {$this -> estado} WHERE idCliente = {$this -> idPersona}";
+        return "UPDATE Cliente SET estado = {$this -> estado} WHERE idCliente = {$this -> idPersona}";
     }
 
     public function consultarTodos(){

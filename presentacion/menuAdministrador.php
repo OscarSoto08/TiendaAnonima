@@ -20,6 +20,7 @@ $administrador -> consultar();
 					<ul class="dropdown-menu">
                         <li><a class='dropdown-item' href='?pid="<?php echo base64_encode('presentacion/producto/formularioProducto.php')?>"'>Nuevo Producto</a></li>
                         <li><a class='dropdown-item' href='?pid=<?php echo base64_encode("presentacion/producto/buscarProducto.php")?>'>Buscar Producto</a></li>
+                        <li><a class='dropdown-item' href='?pid=<?php echo base64_encode('presentacion/producto/reporteProducto.php')?>'>Reporte de productos</a></li>
 					</ul>
 				</li>
 				<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"

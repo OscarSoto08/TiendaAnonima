@@ -31,6 +31,15 @@ $paginasConSesion = [
     'presentacion/producto/formularioProducto.php'
 ];
 
+$paginasPDF = [
+    'presentacion/producto/reporteProducto.php'
+];
+
+$pid = base64_decode($_GET["pid"]);
+
+if(in_array($pid, $paginasPDF)){
+    include $pid;
+}else{
 ?>
 <html>
 <head>
@@ -46,7 +55,7 @@ if(!isset($_GET["pid"])){
     include ("presentacion/menu.php");
     include ("presentacion/producto/consultaProductoInicio.php");    
 }else{
-    $pid = base64_decode($_GET["pid"]);
+    
     if(in_array($pid, $paginasSinSesion)){
         include ($pid);
     }else if(in_array($pid, $paginasConSesion)){
@@ -59,7 +68,7 @@ if(!isset($_GET["pid"])){
         echo "<h1>Error 404</h1>";        
     }
 }
-
+}
 ?>
 <script src="https://kit.fontawesome.com/14596e32cc.js" crossorigin="anonymous"></script>
 </body>
